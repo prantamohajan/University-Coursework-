@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PUAIS Login</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background: #f4f6f9;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            /* Login Container Card */
+            .login-container {
+                background: #ffffff;
+                width: 100%;
+                max-width: 400px;
+                margin: auto;
+                padding: 2.5rem 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                text-align: center;
+            }
+
+            .brand-title {
+                font-size: 2.2rem;
+                font-weight: 700;
+                color: #1e3a8a;
+                /* Deep Academic Blue */
+                letter-spacing: 1px;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Logo Placeholder */
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+                background: #e2e8f0;
+                border-radius: 50%;
+                margin: 0 auto 2rem auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #64748b;
+                font-size: 0.85rem;
+                font-weight: 500;
+                border: 2px solid #cbd5e1;
+            }
+.logo-placeholder {
+    width: 110px;         
+    height: 110px;        
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; 
+    border: none;        
+}
+
+/* Inside Image Handling for University Crest */
+.logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   
+    background: transparent;
+    border-radius: 0;      
+}
+            .form-group {
+                position: relative;
+                margin-bottom: 1.5rem;
+                text-align: left;
+            }
+
+            .form-group label {
+                display: block;
+                font-size: 0.9rem;
+                color: #475569;
+                margin-bottom: 0.4rem;
+                font-weight: 500;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                font-size: 1rem;
+                color: #334155;
+                transition: all 0.3s ease;
+                outline: none;
+            }
+
+            .form-group input:focus {
+                border-color: #1e3a8a;
+                box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+            }
+
+            /* Login Button */
+            .login-btn {
+                width: 100%;
+                padding: 0.75rem;
+                background: #1e3a8a;
+                color: #ffffff;
+                border: none;
+                border-radius: 6px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.3s ease;
+                margin-top: 0.5rem;
+            }
+
+            .login-btn:hover {
+                background: #1d4ed8;
+            }
+
+            /* Footer Styling */
+            footer {
+                width: 100%;
+                padding: 1.5rem 1rem;
+                background: #ffffff;
+                border-top: 1px solid #e2e8f0;
+                text-align: center;
+                font-size: 0.85rem;
+                color: #64748b;
+                line-height: 1.5;
+            }
+
+            footer .software-section {
+                font-weight: 500;
+                color: #475569;
+                margin-top: 0.25rem;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="login-container">
+            <h1 class="brand-title">PUAIS</h1>
+
+            <div class="logo-placeholder">
+                <img src="logo.jpeg" alt="PU Logo">
+            </div>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" placeholder="Enter your ID" required
+                        autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+
+        <footer>
+            <div>Copyright &copy; 2011-2026 Premier University, All Rights Reserved.</div>
+            <div class="software-section">Software Section, Department of IT, Premier University (Design & Develop)
+            </div>
+        </footer>
+
+    </body>
+
+</html>
