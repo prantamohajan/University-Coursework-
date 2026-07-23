@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arpita Paul — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Custom CSS Variables */
+    :root {
+      --bg: #F6F5F1;
+      --ink: #1E2A26;
+      --teal: #17423A;
+      --mustard: #C9922B;
+      --line: #D8D4C8;
+      --card: #FFFFFF;
+      --card-hover: #FBFBFA;
+      --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', serif;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(246, 245, 241, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+      transition: var(--transition-smooth);
+    }
+
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+    }
+
+    .brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .navlinks a {
+      opacity: 0.7;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .navlinks a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: var(--mustard);
+      transition: var(--transition-smooth);
+    }
+
+    .navlinks a:hover {
+      opacity: 1;
+      color: var(--teal);
+    }
+
+    .navlinks a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    header.hero {
+      padding: 90px 0 60px;
+    }
+
+    .hero .wrap {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* Elegant Editorial Image Frame */
+    .avatar-frame {
+      position: relative;
+      flex-shrink: 0;
+      display: inline-block;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--bg);
+      transition: var(--transition-smooth);
+    }
+
+    .avatar-frame:hover {
+      transform: scale(1.03) rotate(2deg);
+      border-color: var(--mustard);
+    }
+
+    .avatar {
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--mustard);
+    }
+
+    .hero-info h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .hero .role {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--mustard);
+      margin-bottom: 4px;
+    }
+
+    .hero .uni {
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0.65;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* GENERAL SECTIONS */
+    section {
+      padding: 56px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 32px;
+      height: 2px;
+      background-color: var(--mustard);
+    }
+
+    .about p {
+      max-width: 62ch;
+      font-size: 1.05rem;
+      color: var(--ink);
+      opacity: 0.9;
+      line-height: 1.75;
+    }
+
+    /* SKILLS */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .skills-list li {
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+      cursor: default;
+      box-shadow: 0 2px 6px rgba(30, 42, 38, 0.02);
+    }
+
+    .skills-list li:hover {
+      border-color: var(--mustard);
+      color: var(--teal);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 146, 43, 0.12);
+    }
+
+    /* PROJECTS & CARDS */
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--mustard);
+      border-radius: 8px;
+      padding: 24px 28px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 15px rgba(30, 42, 38, 0.02);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      background: var(--card-hover);
+      border-color: var(--line) var(--line) var(--line) var(--teal);
+      box-shadow: 0 10px 25px rgba(30, 42, 38, 0.06);
+    }
+
+    .project-card .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mustard);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    /* CONTACT SECTION */
+    .contact-box {
+      background: var(--teal);
+      color: #F6F5F1;
+      border-radius: 12px;
+      padding: 36px;
+      margin-top: 8px;
+      box-shadow: 0 10px 30px rgba(23, 66, 58, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle background decoration */
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(201, 146, 43, 0.1);
+      pointer-events: none;
+    }
+
+    .contact-box h2 {
+      color: #F6F5F1;
+      margin-bottom: 16px;
+    }
+
+    .contact-box h2::after {
+      background-color: var(--mustard);
+    }
+
+    .contact-row {
+      margin-top: 18px;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-row div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.9;
+    }
+
+    .contact-box a {
+      color: var(--mustard);
+      font-weight: 600;
+      border-bottom: 1px dotted var(--mustard);
+      padding-bottom: 1px;
+    }
+
+    .contact-box a:hover {
+      color: #FFFFFF;
+      border-bottom-style: solid;
+      border-bottom-color: #FFFFFF;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      opacity: 0.5;
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 600px) {
+      header.hero {
+        padding: 60px 0 40px;
+      }
+
+      .hero .wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .hero-info h1 {
+        font-size: 2.1rem;
+      }
+
+      .navlinks {
+        gap: 14px;
+        font-size: 0.8rem;
+      }
+
+      nav .wrap {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contact-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="wrap">
+      <span class="brand">Arpita Paul</span>
+      <ul class="navlinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="avatar-frame">
+        <img class="avatar" src="AP.jpg" alt="Arpita Paul">
+      </div>
+      <div class="hero-info">
+        <h1>Arpita Paul</h1>
+        <div class="role">Web Developer &amp; CS Student</div>
+        <div class="uni">Premier University</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>I'm Arpita Paul, a student at Premier University. I enjoy working on web
+        development and building practical projects that solve everyday
+        problems — like simplifying access to government services or tracking
+        daily habits.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="project-card">
+        <span class="tag">Bachelor's Degree</span>
+        <h3>Premier University</h3>
+        <p>Computer Science &amp; Engineering — currently pursuing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>UI Basics</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="projects">
+
+        <div class="project-card">
+          <span class="tag">Civic Tech</span>
+          <h3>GovConnect — Government Services Portal</h3>
+          <p>A conceptual web portal designed to let citizens easily
+            find and access government services — such as
+            birth registration, tax payment, and complaint
+            submission — all in one place.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag">Productivity</span>
+          <h3>DailyTrack — Habit Tracker</h3>
+          <p>A lightweight web app for adding, checking off, and
+            tracking daily habits (study, exercise, sleep),
+            with a simple checklist and weekly streak view.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag">Student Project</span>
+          <h3>Portfolio Site</h3>
+          <p>This website itself — built with plain, simple HTML and
+            CSS to present my profile and work clearly.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Contact</h2>
+        <div class="contact-row">
+          <div>Email: <a href="mailto:arpitapaul01566@gmail.com">arpitapaul01566@gmail.com</a></div>
+          <div>University: Premier University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Arpita Paul. All rights reserved.
+  </footer>
+
+</body>
+
+</html>
